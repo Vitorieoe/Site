@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Para impedir barras de rolagem */
+        }
+
+        #video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <title>Seu Site</title>
+</head>
+<body>
+    <div id="video-overlay" onclick="playVideo()">
+        Clique aqui
+    </div>
+
+    <video autoplay loop id="myVideo">
+        <source src="Vídeo.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+
+    <script>
+        function playVideo() {
+            var overlay = document.getElementById("video-overlay");
+            overlay.style.display = "none";
+
+            var video = document.getElementById("myVideo");
+            video.play();
+        }
+    </script>
+</body>
+</html>
+
+
+
+
